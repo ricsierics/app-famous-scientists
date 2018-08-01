@@ -7,12 +7,17 @@ namespace FamousScientis
 {
 	public partial class App : Application
 	{
-		public App ()
+        public App ()
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
-		}
+            var navigationPage = new NavigationPage(new MainPage())
+            {
+                BarTextColor = Color.FromHex("#FFFFFF"),
+                BarBackgroundColor = Color.FromHex("#0099FF")
+            };
+            MainPage = navigationPage;
+        }
 
 		protected override void OnStart ()
 		{

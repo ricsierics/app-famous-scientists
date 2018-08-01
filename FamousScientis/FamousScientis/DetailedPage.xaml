@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FamousScientis.DetailedPage"
+             Padding="20, 10">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Double x:Key="imageDimension">150</x:Double>
+
+            <Style x:Key="labelStyleBase" TargetType="Label">
+                <Setter Property="TextColor" Value="#252222" />
+            </Style>
+
+            <Style x:Key="imageStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill"/>
+                <Setter Property="WidthRequest" Value="{StaticResource imageDimension}" />
+                <Setter Property="HeightRequest" Value="{StaticResource imageDimension}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#FFFFFF">
+
+                <Image Source="{Binding ImagePath}" Style="{StaticResource imageStyle}" />
+
+                <Label Text="{Binding LifeSpan}" Style="{DynamicResource SubtitleStyle}" Font="Bold, Italic" HorizontalOptions="Center" />
+
+                <Label Text="{Binding Description}" Style="{DynamicResource BodyStyle, labelStyleBase}" HorizontalOptions="Center" FontAttributes="Bold" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
